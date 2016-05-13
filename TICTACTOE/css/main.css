@@ -1,0 +1,16 @@
+h1,.botones{
+	text-align: center;
+	/*border:1px solid green;*/
+}
+
+.botones{
+    width: 144px;
+    margin: auto;
+}
+
+.boton{
+	width: 35px;	
+	height: 35px;	
+	border: 1px solid red;
+	display: inline-block;	
+}
