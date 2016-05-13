@@ -23,7 +23,17 @@ $(document).ready(function(){
 
 				}
 			
-		});
+
+         //limpiar datos
+                
+            $('#newgame').click(function() {
+                location.reload();
+            });
+
+            
+
+        });
+
 
 function validar(valor){
 	var btn1=$("#bt1").text()
@@ -59,4 +69,11 @@ function validar(valor){
 }
     
 });
+
+// $(document).ready(function() {
+//         $('#newgame').click(function() {
+//             location.reload();
+//      });
+// });
+
 
