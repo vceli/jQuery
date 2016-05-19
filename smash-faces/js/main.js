@@ -34,7 +34,8 @@ var n = 0; //variable global
 var nameCoder = ""; //variable global
 var sede = 0; // variable global
 var veces = 0;
-var generados = [];
+var generadosperu= [];
+var generadosmexico= []
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -45,7 +46,7 @@ function matrixsede(opcion){
 	if(opcion=="1"){
 		// var aleatorio=getRandomInt(0, mexico.length-1);
 		// ponerfoto(mexico, aleatorio);
-		var aleatorio = generarAleatorio(mexico)
+		var aleatorio = generarAleatorio(mexico,generadosmexico)
 		if (aleatorio == -1) alert("No hay más fotos")
 		else ponerfoto(mexico, aleatorio)	
 
@@ -53,7 +54,7 @@ function matrixsede(opcion){
 	}else if(opcion=="2"){
 		// var aleatorio=getRandomInt(0, peru.length-1);
 		// ponerfoto(peru, aleatorio);
-		var aleatorio = generarAleatorio(peru)
+		var aleatorio = generarAleatorio(peru,generadosperu)
 		if (aleatorio == -1) alert("No hay más fotos")
 		else ponerfoto(peru, aleatorio)
 	}
@@ -80,12 +81,12 @@ function intentos(){
 
 }
 
-function generarAleatorio(pais){
+function generarAleatorio(pais,generados){
 	
 	var existe = true;
 	
 	do{
-		var aleatorio =getRandomInt(0,pais.length-1);
+		var aleatorio =getRandomInt(0,(pais.length)-1);
 		if (generados.length == pais.length) {
 			aleatorio = -1
 			existe = false	
