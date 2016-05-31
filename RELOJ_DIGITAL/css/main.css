@@ -1,42 +1,55 @@
+body{
+   background-image: url(../bck.png)!important;
+   background-size: cover !important;
+   color: white !important;
+   font-size: 16px !important;
+   height: 100vh;
+   padding-top: 3%;
+}
 #horaPeru{
-	font-size: 5em;
+    font-size: 5em;
 }
 
 .caja {
-    border: 1px solid black;
-    width: 33px;
-    height: 33px;
-    margin: auto;
-    background-color: #DDDDDD;
+   border: 1px solid black;
+   width: 140px;
+   height: 33px;
+   margin: auto;
+   background-color: #A5A5A5 ;
+   padding: 5px 9px;
 }
 
 .ventanas{
-    position: fixed;
-    background-color: rgba(51, 51, 51, 0.09);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: none;
+   position: fixed;
+   background-color: rgba(0, 0, 0, 0.86);
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   display: none;
 }
 
 .lugares{
-	position: relative;
-	background-color: white;
+    position: relative;
     padding: 1%;
     width: 87%;
     margin: auto;
+    background-color: transparent;
+    border: 1px solid white;
 }
 
 .cerrar{
-	position: absolute;
-    right: 21px;
-    font-weight: bold;
-    color: gray;
+    position: absolute;
+   right: 21px;
+   font-weight: bold;
+   color: gray;
 }
 
 .cerrar:hover{
-	color: red;
-	/*cursor: default;*/
-	cursor: pointer;
+    color: red;
+    /*cursor: default;*/
+    cursor: pointer;
+}
+.caja:hover{
+   cursor: pointer;
 }
