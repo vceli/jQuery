@@ -43,13 +43,15 @@ $(document).ready(function(){
 
 	$( '.check' ).on( 'click', function() {
 		valorData= $(this).attr("data");
-		var lugar = lugares[valorData].pais;
-		var horasumada = lugares[valorData].horas;// $(this).attr('checked')
-
+		// $(this).attr('checked')
+		// var id= $(this).attr("data") 
 		if(this.checked){
-		$('.agregandoPais').append('<p class="text-center">'+lugar+"&nbsp;&nbsp;&nbsp;&nbsp"+sumadeHoras(horasumada)+":"+ new Date().getMinutes()+" "+sumadeHoras(horasumada)+'</p>');
+			$(".agregandoPais").append("<div id='p"+valorData+"'></div>");
+			sumadeHoras(valorData);
+		// setInterval(function(){ sumadeHoras();},1000);
+		// $('.agregandoPais').append('<p class="text-cente" id='+valorData+'><span class="ponerlugar">'+lugar+'</span><span class="ponerhora">'+sumadeHoras(horasumada)+":"+ new Date().getMinutes()+" "+new Date().getSeconds()+'</span> </p>');
 		}else{
-			$().remove();
+			$('#p'+valorData).remove();  //del último check que haga se remueva
 		}
 		// sumadeHoras(horasumada);
 	})
@@ -62,21 +64,32 @@ function reloj(){
 	$("#fecha").text(days[d.getDay()]+", "+d.getDate()+" de "+meses[d.getMonth()])
 }
 
-function sumadeHoras(horasumada){
+function sumadeHoras(valorData){
+	var lugar = lugares[valorData].pais;
+	var horasumada = lugares[valorData].horas;
+
 	var d = new Date();
 	var totaldeHoras = d.getHours()+horasumada;
 	var imprimir= null;
-	var imprimirday= "";
+	// var imprimirday= "";
 	if(totaldeHoras>24){
 		imprimir = totaldeHoras - 24;
-		imprimirday= days[d.getDay()+1];
+		// imprimirday= days[d.getDay()+1];
 	}else{
 		imprimir = totaldeHoras;
-		imprimirday= days[d.getDay()];
+		// imprimirday= days[d.getDay()];
 	}
-	// return imprimir
-	return imprimirday
+		setInterval('sumadeHoras('+valorData+')',1000);
+		$('#p'+valorData).html('<p class="text-center" id='+valorData+'><span class="ponerlugar">'+lugar+'</span><span class="ponerhora">'+imprimir+":"+ new Date().getMinutes()+" "+new Date().getSeconds()+'</span> </p>');
+
+	// return imprimirday
 }
+
+//debe ser un setTimeout y no un setInterval pues
+
+//  cual es la diferencia entre setInterval setTimeOut
+
+
 	// $(".cerrar").click(function(){
 	// 	$(".ventanas").css("display","none");
 	// });
